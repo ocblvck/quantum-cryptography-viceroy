@@ -13,8 +13,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="quantum-cryptography-viceroy",
     version="0.1.0",
-    author="Quantum Cryptography Research Team",
-    author_email="",
+    author="Chibuike Okekeogbu",
+    author_email="ccokekeogbu@aggies.ncat.edu",
     description="A comprehensive QKD protocol implementation and security analysis suite",
     long_description=long_description,
     long_description_content_type="text/markdown",
