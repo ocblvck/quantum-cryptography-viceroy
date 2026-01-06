@@ -1,4 +1,4 @@
-# Quantum Cryptography Viceroy 🔐
+# Quantum Cryptography Viceroy 
 
 ## Quantum Key Distribution Protocol Suite: Implementation, Attack Simulation, and Security Analysis
 
@@ -6,7 +6,7 @@
 [![Qiskit](https://img.shields.io/badge/Qiskit-1.0+-purple.svg)](https://qiskit.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📋 Project Overview
+##  Project Overview
 
 This project provides a comprehensive implementation and analysis of Quantum Key Distribution (QKD) protocols, designed as an undergraduate research project for Spring 2026. The project explores the theoretical foundations, practical implementations, and security analysis of quantum cryptographic protocols.
 
@@ -24,7 +24,7 @@ This project provides a comprehensive implementation and analysis of Quantum Key
 - Conference paper submission (potential venues: IEEE QCE, ACM Q2B, SPIE Quantum)
 - Open-source educational resource for quantum cryptography
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 quantum-cryptography-viceroy/
@@ -86,7 +86,7 @@ quantum-cryptography-viceroy/
     └── data/
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Installation
 
@@ -124,7 +124,7 @@ print(f"QBER: {qber:.4f}")
 print(f"Secure Key Rate: {metrics.secure_key_rate():.4f}")
 ```
 
-## 📚 Theoretical Background
+##  Theoretical Background
 
 ### Quantum Key Distribution (QKD)
 
@@ -143,7 +143,7 @@ QKD leverages the fundamental principles of quantum mechanics to establish secur
 | E91      | 1991 | Entangled pairs | Bell inequality | Medium   |
 | SARG04   | 2004 | 4 (2 bases)  | PNS-resistant  | Low        |
 
-## 📅 Semester Timeline
+##  Semester Timeline
 
 ### Phase 1: Foundation (Weeks 1-4)
 - [ ] Literature review and theoretical foundations
@@ -169,13 +169,13 @@ QKD leverages the fundamental principles of quantum mechanics to establish secur
 - [ ] Submit to conference/symposium
 - [ ] Document and release code
 
-## 👥 Team
+##  Team
 
-- **Faculty Mentor**: [Your Name]
+- **Faculty Mentor**: Chibuike Okekeogbu
 - **Undergraduate Researcher 1**: TBD
 - **Undergraduate Researcher 2**: TBD
 
-## 📖 References
+##  References
 
 1. Bennett, C. H., & Brassard, G. (1984). Quantum cryptography: Public key distribution and coin tossing.
 2. Bennett, C. H. (1992). Quantum cryptography using any two nonorthogonal states.
@@ -183,11 +183,11 @@ QKD leverages the fundamental principles of quantum mechanics to establish secur
 4. Scarani, V., et al. (2004). Quantum cryptography protocols robust against photon number splitting attacks.
 5. Pirandola, S., et al. (2020). Advances in quantum cryptography. Advances in Optics and Photonics.
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
