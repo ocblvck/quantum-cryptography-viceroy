@@ -172,8 +172,9 @@ QKD leverages the fundamental principles of quantum mechanics to establish secur
 ##  Team
 
 - **Faculty Mentor**: Chibuike Okekeogbu
-- **Undergraduate Researcher 1**: TBD
-- **Undergraduate Researcher 2**: TBD
+- **Undergraduate Researcher 1**: Malcolm Wyatt
+- **Undergraduate Researcher 2**: Jerald Fisher
+- **Undergraduate Researcher 2**: Habiba Sorour
 
 ##  References
 
