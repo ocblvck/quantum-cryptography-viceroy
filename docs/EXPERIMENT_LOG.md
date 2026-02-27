@@ -29,93 +29,93 @@ Follow-up experiments
 ```
 
 ---
+Example, I think
+    ## [2025-XX-XX] Project Setup and Baseline
 
-## [2025-XX-XX] Project Setup and Baseline
+    ### Objective
+    Establish baseline performance for all implemented protocols.
 
-### Objective
-Establish baseline performance for all implemented protocols.
+    ### Method
+    - Protocols: BB84, B92, E91, SARG04
+    - Key length: 256 bits
+    - Trials: 10 per protocol
+    - Noise: None
 
-### Method
-- Protocols: BB84, B92, E91, SARG04
-- Key length: 256 bits
-- Trials: 10 per protocol
-- Noise: None
+    ### Results
+    *(To be filled after running experiments)*
 
-### Results
-*(To be filled after running experiments)*
+    | Protocol | Sifting Eff. | Mean QBER | Std QBER | Time (s) |
+    |----------|--------------|-----------|----------|----------|
+    | BB84     |              |           |          |          |
+    | B92      |              |           |          |          |
+    | E91      |              |           |          |          |
+    | SARG04   |              |           |          |          |
 
-| Protocol | Sifting Eff. | Mean QBER | Std QBER | Time (s) |
-|----------|--------------|-----------|----------|----------|
-| BB84     |              |           |          |          |
-| B92      |              |           |          |          |
-| E91      |              |           |          |          |
-| SARG04   |              |           |          |          |
+    ### Conclusions
+    *(To be filled)*
 
-### Conclusions
-*(To be filled)*
+    ### Next Steps
+    *(To be filled)*
 
-### Next Steps
-*(To be filled)*
+    ---
 
----
+    ## [YYYY-MM-DD] Template for Future Experiments
 
-## [YYYY-MM-DD] Template for Future Experiments
-
-### Objective
-
-
-### Method
+    ### Objective
 
 
-### Results
+    ### Method
 
 
-### Conclusions
+    ### Results
 
 
-### Next Steps
+    ### Conclusions
 
 
----
+    ### Next Steps
 
-## Notes and Observations
 
-### Week 1
-- 
+    ---
 
-### Week 2
-- 
+    ## Notes and Observations
 
-### Week 3
-- 
+    ### Week 1
+    - 
 
-### Week 4
-- 
+    ### Week 2
+    - 
 
----
+    ### Week 3
+    - 
 
-## Key Findings Summary
+    ### Week 4
+    - 
 
-*(Update as project progresses)*
+    ---
 
-1. 
+    ## Key Findings Summary
 
-2. 
+    *(Update as project progresses)*
 
-3. 
+    1. 
 
----
+    2. 
 
-## Questions for Discussion
+    3. 
 
-1. 
+    ---
 
-2. 
+    ## Questions for Discussion
 
-3. 
+    1. 
 
----
+    2. 
 
-*Experiment Log - Quantum Cryptography Project*
-*Started: [DATE]*
-*Last Updated: [DATE]*
+    3. 
+
+    ---
+
+    *Experiment Log - Quantum Cryptography Project*
+    *Started: [DATE]*
+    *Last Updated: [DATE]*
