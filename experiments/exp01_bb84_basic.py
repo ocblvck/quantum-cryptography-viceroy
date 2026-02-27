@@ -92,8 +92,8 @@ def run_key_length_analysis():
     print("\n\n3. Key Length Analysis")
     print("-" * 40)
     
-    key_lengths = [64, 128, 256, 512, 1024]
-    num_trials = 5
+    key_lengths = [50, 100, 256, 512, 1024]
+    num_trials = 10
     
     results = []
     for length in tqdm(key_lengths, desc="Testing key lengths"):
