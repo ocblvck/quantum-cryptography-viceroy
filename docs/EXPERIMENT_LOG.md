@@ -174,3 +174,31 @@ Why does the sifting efficiency rarely hit exactly 50% in small samples?
 How do different noise models (like Depolarizing vs. Phase Flip) affect the QBER?
 
 Experiment Log - Quantum Cryptography Project Started: 2026-02-26 Last Updated: 2026-02-26
+
+
+[2026-03-15] Experiment 02: Protocol Comparison
+Objective: To compare the sifting efficiency, execution time, and noise resilience of BB84, B92, E91, and SARG04 protocols.
+MethodProtocols: BB84, B92, E91, SARG04
+Parameters: key_length=256, 0% to 10% noise sweep.
+Metric: Sifting Efficiency (%) and Execution Time (s).
+
+Results:
+
+Protocol,Sifting Eff. (%),Execution Time (s),Efficiency Rank
+BB84,~48-50%,~0.25s,1st (Highest)
+B92,~25%,~0.45s,2nd
+SARG04,~25%,~0.42s,3rd
+E91,~22%,~0.75s,4th (Lowest)
+
+Conclusions:
+ Efficiency Trade-off: BB84 remains the gold standard for speed and efficiency, matching bases twice as often as B92 or SARG04.
+ Computational Cost: E91 is significantly slower due to the complexity of simulating entangled states.
+ Noise Resilience: B92 is the most "fragile" under noise, hitting the 11% QBER threshold much sooner than BB84 or SARG04.
+ 
+ Next Steps
+
+ Investigate the Intercept-Resend Attack on these protocols to see which one detects eavesdropping the fastest.
+
+ Notes and Observations Week 3
+
+ Confirmed that SARG04 and B92 have similar sifting efficiencies (~25%) but serve different security purposes (SARG04 is specifically for PNS resistance). Noticed that E91 execution time scales more aggressively with key length than the other protocols.
