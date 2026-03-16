@@ -202,3 +202,32 @@ Conclusions:
  Notes and Observations Week 3
 
  Confirmed that SARG04 and B92 have similar sifting efficiencies (~25%) but serve different security purposes (SARG04 is specifically for PNS resistance). Noticed that E91 execution time scales more aggressively with key length than the other protocols.
+
+
+
+[2026-03-15] Experiment 03: Attack Analysis
+Objective
+Simulate eavesdropping (Eve) to determine detection probabilities and induced error rates.
+
+Method
+Attacks: Intercept-Resend (IR), Photon Number Splitting (PNS).
+
+Metric: Induced QBER and Detection Probability.
+
+Results:
+
+Intercept-Resend: Induced a ~25% QBER when 100% of bits were attacked. This is because Eve chooses the wrong basis 50% of the time, causing Bob to measure a random bit.
+
+PNS Attack: Produced 0% QBER, making it "invisible" to standard error checking.
+
+Detection: A sample size of just 50 bits provided a >99.9% probability of detecting an IR attack.
+
+Conclusions
+The "Magic 25%" QBER is the hallmark of an active eavesdropper. While IR attacks are easy to catch, the PNS attack proves that simply monitoring QBER is not enough for total security; researchers must implement Decoy States to detect Eve when she steals photons without disturbing the state.
+
+Notes and Observations
+Week 3: Noticed that B92 is much more sensitive to channel noise, reaching the 11% cutoff faster than BB84.
+
+Discussion Point: If the PNS attack creates 0% error, the next phase of research should focus on Decoy State implementation to protect multi-photon sources.
+
+
