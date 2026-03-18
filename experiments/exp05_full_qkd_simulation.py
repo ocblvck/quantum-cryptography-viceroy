@@ -240,7 +240,7 @@ def run_full_qkd_simulation(
         if verbose:
             print(f"  Randomness tests: {passed}/{total} passed")
             for r in test_results:
-                status = "✓" if r.passed else "✗"
+                status = "PASS" if r.passed else "FAIL"
                 print(f"    {status} {r.test_name}: p-value = {r.p_value:.4f}")
     else:
         results['phase5_verification'] = {
