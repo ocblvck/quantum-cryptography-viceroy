@@ -8,7 +8,7 @@ Update this log after each significant experiment or finding.
 ## Log Format
 
 ```
-## [Date] Experiment Title
+## [Date] [Name] Experiment Title
 
 ### Objective
 What we aimed to learn/test
