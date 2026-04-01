@@ -8,6 +8,7 @@ Each assignment is written to fit the existing repository structure. Before star
 
 1. [Assignment 01: Implementing B92 and E91](assignment_01_b92_e91.md)
 2. [Assignment 02: Attack and Noise Analysis](assignment_02_attack_noise_analysis.md)
+3. [Assignment 03: SARG04 and PNS Resistance](assignment_03_sarg04_pns_resistance.md)
 
 ## General Expectations
 

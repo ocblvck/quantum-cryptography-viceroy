@@ -144,6 +144,7 @@ Assignment handouts for the undergraduate research group live in `docs/assignmen
 - Assignment index: [docs/assignments/README.md](docs/assignments/README.md)
 - Current B92/E91 implementation assignment: [docs/assignments/assignment_01_b92_e91.md](docs/assignments/assignment_01_b92_e91.md)
 - Current attack and noise analysis assignment: [docs/assignments/assignment_02_attack_noise_analysis.md](docs/assignments/assignment_02_attack_noise_analysis.md)
+- Current SARG04 assignment: [docs/assignments/assignment_03_sarg04_pns_resistance.md](docs/assignments/assignment_03_sarg04_pns_resistance.md)
 - Experiment notes and findings: [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)
 
 ## Theoretical Background
