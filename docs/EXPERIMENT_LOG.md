@@ -80,29 +80,10 @@ Example, I think
 
     ## Notes and Observations
 
-    ### Week 1
-    - 
-
-    ### Week 2
-    - 
-
-    ### Week 3
-    - 
-
-    ### Week 4
-    - 
 
     ---
 
     ## Key Findings Summary
-
-    *(Update as project progresses)*
-
-    1. 
-
-    2. 
-
-    3. 
 
     ---
 
@@ -228,7 +209,6 @@ Std deviation: 0.0210
 
 ## Notes and Observations
 
-### Week 1
 - Baseline BB84 protocol behavior verified under noiseless simulation.
 
 - Channel noise experiments show expected degradation in security metrics.
@@ -236,15 +216,6 @@ Std deviation: 0.0210
 - Sifting efficiency converges near theoretical 50% expectation.
 
 - Pending future multi-protocol comparison experiments.
-
-### Week 2
-- 
-
-### Week 3
-- 
-
-### Week 4
-- 
 
 ---
 
