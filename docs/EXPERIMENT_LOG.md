@@ -273,7 +273,7 @@ Std deviation: 0.0210
 *Started: 2/25/2026*
 *Last Updated: 2/25/2026*
 ```
-
+```
 [2026-02-26] BB84 Statistical and Security Analysis
 Objective
 To analyze the relationship between key length and statistical variance, and to verify theoretical sifting efficiency and noise thresholds.
@@ -382,5 +382,5 @@ Notes and Observations
 Week 3: Noticed that B92 is much more sensitive to channel noise, reaching the 11% cutoff faster than BB84.
 
 Discussion Point: If the PNS attack creates 0% error, the next phase of research should focus on Decoy State implementation to protect multi-photon sources.
-
+```
 
