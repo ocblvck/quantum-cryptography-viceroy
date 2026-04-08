@@ -272,7 +272,7 @@ Std deviation: 0.0210
 *Experiment Log - Quantum Cryptography Project*
 *Started: 2/25/2026*
 *Last Updated: 2/25/2026*
-
+```
 
 [2026-02-26] BB84 Statistical and Security Analysis
 Objective
