@@ -8,7 +8,7 @@ Update this log after each significant experiment or finding.
 ## Log Format
 
 ```
-## [Date] Experiment Title
+## [Date] [Name] Experiment Title
 
 ### Objective
 What we aimed to learn/test
@@ -79,29 +79,10 @@ Follow-up experiments
 
     ## Notes and Observations
 
-    ### Week 1
-    - 
-
-    ### Week 2
-    - 
-
-    ### Week 3
-    - 
-
-    ### Week 4
-    - 
 
     ---
 
     ## Key Findings Summary
-
-    *(Update as project progresses)*
-
-    1. 
-
-    2. 
-
-    3. 
 
     ---
 
@@ -119,8 +100,157 @@ Follow-up experiments
     *Started: [DATE]*
     *Last Updated: [DATE]*
 
+```
+Malcolm Wyatt
+## 2/25/2026 BB84 Protocol Analysis
 
+<<<<<<< HEAD
 [2026-02-26] BB84 Statistical and Security Analysis   - Jerald D. Fisher
+=======
+### Objective
+Evaluate the performance of the BB84 quantum key distribution protocol by analyzing:
+- Key length vs QBER statistical variance
+- Sifting efficiency relative to theoretical expectation (~50%)
+- QBER and security behavior under channel noise
+
+### Method
+- Protocol used: BB84 Quantum Key Distribution
+- Key length settings: 50, 100, 256, 512, 1024 bits
+- Trials per key length: 10
+- Noise levels tested: 0% to 20% (11 levels total)
+- Sifting efficiency trials: 20 runs at key_length = 256
+
+### Results
+
+| Protocol | Sifting Eff. | Mean QBER NN| Mean QBER N|Std QBER NN|Std QBER N| Time (s) |
+|----------|--------------|-------------|------------|-----------|----------|----------|
+| BB84     | 0.4991       |     0       |  ~0.0576   |    0      | ~0.044   |   0.08   |
+| B92      |              |             |            |           |          |          |
+| E91      |              |             |            |           |          |          |
+| SARG04   |              |             |            |           |          |          |
+
+1. BB84 Protocol - No Noise
+----------------------------------------
+
+BB84 Protocol Results:
+  Raw bits transmitted: 640
+  Sifted key length: 309
+  Final key length: 256
+  QBER: 0.0000
+  Execution time: 0.08s
+
+Security Analysis:
+  QBER: 0.0000
+  Secret Key Rate: 0.4000
+  Mutual Info (A:B): 1.0000
+  Is Secure: True
+
+
+2. BB84 Protocol with Noise
+----------------------------------------
+
+Results:
+   Noise     QBER   Key Rate   Secure
+----------------------------------------
+   0.00%   0.0000     1.0000        1
+   2.00%   0.0333     0.8576        1
+   4.00%   0.0333     0.8013        1
+   6.00%   0.0000     0.5256        1
+   8.00%   0.0000     0.4476        1
+  10.00%   0.0667     0.3391        1
+  12.00%   0.1000     0.0000        1
+  14.00%   0.0667     0.0305        1
+  16.00%   0.1000     0.0000        0
+  18.00%   0.1333     0.0000        1
+  20.00%   0.1000     0.0000        1
+Average Secret Key Rate: 0.3638
+
+3. Key Length Analysis
+----------------------------------------
+
+Results:
+  Key Length    Mean QBER     Std QBER
+----------------------------------------
+          50       0.0000       0.0000
+         100       0.0000       0.0000
+         256       0.0000       0.0000
+         512       0.0000       0.0000
+        1024       0.0000       0.0000
+
+Sifting Efficiency Analysis
+----------------------------------------
+Mean sifting efficiency: 0.4991
+Std deviation: 0.0210
+
+---
+
+
+
+### Conclusions
+1. The BB84 protocol implementation demonstrates stable performance under low noise conditions.
+
+2. Statistical variance in QBER is negligible without channel noise, indicating deterministic state preparation and measurement in the simulation.
+   In a noiseless simulation, QBER remains identically zero regardless of key length.
+
+3. Experimental sifting efficiency closely matches theoretical expectations.
+
+4. Protocol security degrades as channel noise increases, and insecurity emerges near high noise regimes.
+
+5. Overall results validate expected behavior of quantum key distribution under simulated depolarizing noise.
+
+---
+
+### Next Steps
+
+- Extend experiments to compare BB84 performance with other QKD protocols.
+- Increase trial counts to improve statistical confidence.
+- Analyze mutual information between communicating parties under varying noise levels.
+- Explore adaptive error correction integration.
+
+---
+
+## Notes and Observations
+
+- Baseline BB84 protocol behavior verified under noiseless simulation.
+
+- Channel noise experiments show expected degradation in security metrics.
+
+- Sifting efficiency converges near theoretical 50% expectation.
+
+- Pending future multi-protocol comparison experiments.
+
+---
+
+## Key Findings Summary
+
+
+1. BB84 sifting efficiency experimentally approaches theoretical 50% efficiency.
+
+2. 
+
+3. 
+
+---
+
+## Questions for Discussion
+
+1. Why did I receive 0 for QBER and mean and STD for each key length?
+
+2. 
+
+3. 
+
+---
+
+*Experiment Log - Quantum Cryptography Project*
+*Started: 2/25/2026*
+*Last Updated: 2/25/2026*
+```
+```
+[2026-02-26] BB84 Statistical and Security Analysis
+Objective
+To analyze the relationship between key length and statistical variance, and to verify theoretical sifting efficiency and noise thresholds.
+>>>>>>> 4be2d93f8834106c9e01b34a0147fe2abd6ab498
 
 Objective
     To analyze the relationship between key length and statistical variance, and to verify theoretical sifting efficiency and noise thresholds.
@@ -206,11 +336,16 @@ Conclusions:
 
     The "Magic 25%" QBER is the hallmark of an active eavesdropper. While IR attacks are easy to catch, the PNS attack proves that simply monitoring QBER is not enough for total security; researchers must implement Decoy States to detect Eve when she steals photons without disturbing the state.
 
+<<<<<<< HEAD
 Notes and Observations:
     Week 3: Noticed that B92 is much more sensitive to channel noise, reaching the 11% cutoff faster than BB84.
 
 Discussion Point: 
     If the PNS attack creates 0% error, the next phase of research should focus on Decoy State implementation to protect multi-photon sources.
+=======
+Discussion Point: If the PNS attack creates 0% error, the next phase of research should focus on Decoy State implementation to protect multi-photon sources.
+```
+>>>>>>> 4be2d93f8834106c9e01b34a0147fe2abd6ab498
 
 Image:
 results\figures\exp03_attack_analysis.png

@@ -1,8 +1,8 @@
 # Quantum Key Distribution: Protocol Theory
 
-This document provides the theoretical foundation for the QKD protocols
-implemented in this project. It is designed to support undergraduate
-learning and research.
+This document summarizes the theory behind the QKD protocols implemented
+in this repository. It is written for students who need enough background
+to read the code and run experiments.
 
 ## Table of Contents
 
@@ -19,8 +19,8 @@ learning and research.
 ## Introduction to Quantum Cryptography {#introduction}
 
 Quantum Key Distribution (QKD) enables two parties (Alice and Bob) to
-establish a shared secret key with information-theoretic security—a
-level of security impossible with classical methods.
+establish a shared secret key with information-theoretic security. The
+idea is that eavesdropping changes the quantum system in a detectable way.
 
 ### Key Principles
 
@@ -28,7 +28,7 @@ level of security impossible with classical methods.
 2. **Measurement Disturbance**: Measuring a quantum state disturbs it
 3. **Heisenberg Uncertainty**: Incompatible observables cannot be measured simultaneously
 
-These principles ensure that any eavesdropping attempt is detectable.
+These principles are what allow Alice and Bob to detect interference.
 
 ### QKD vs Classical Cryptography
 
@@ -170,10 +170,10 @@ Quantum mechanics predicts |S| = 2√2 ≈ 2.83 for entangled states.
 
 ### Device Independence
 
-E91 can provide security even with untrusted devices:
+E91 can, in principle, support security claims even with partially untrusted devices:
 - Bell violation certifies genuine entanglement
 - No assumptions about device internals needed
-- Ultimate level of cryptographic security
+- Stronger security interpretation than prepare-and-measure protocols
 
 ---
 

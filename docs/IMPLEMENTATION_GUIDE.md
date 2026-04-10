@@ -1,7 +1,7 @@
 # Implementation Guide
 
-This guide provides detailed instructions for understanding and extending
-the QKD implementation in this project.
+This guide explains how the QKD codebase is organized and how to extend it
+without fighting the existing structure.
 
 ## Table of Contents
 
@@ -34,10 +34,10 @@ quantum-cryptography-viceroy/
 
 ### Design Principles
 
-1. **Modularity**: Each component is independent
-2. **Extensibility**: Easy to add new protocols/attacks
-3. **Educational**: Code is well-documented and readable
-4. **Reproducibility**: Seed-based random number generation
+1. **Modularity**: Components should stay reasonably separate.
+2. **Extensibility**: New protocols and experiments should fit the current layout.
+3. **Readability**: Code should stay understandable to new students.
+4. **Reproducibility**: Use fixed seeds when you need comparable runs.
 
 ---
 
@@ -89,12 +89,12 @@ class QKDResult:
     metadata: dict               # Protocol-specific data
 ```
 
-### Example: Implementing Six-State Protocol
+### Example: Implementing a New Protocol
 
 ```python
 class SixStateProtocol(BaseQKDProtocol):
     """
-    Six-state protocol with 3 bases for enhanced security.
+    Example skeleton for a protocol with three bases.
     Bases: Z (|0⟩,|1⟩), X (|+⟩,|-⟩), Y (|+i⟩,|-i⟩)
     """
     
@@ -150,7 +150,7 @@ class MyAttack(BaseAttack):
 ```python
 class BeamSplittingAttack(BaseAttack):
     """
-    Eve splits off a fraction of each pulse for later measurement.
+    Example skeleton for a beam-splitting style attack.
     """
     
     def __init__(self, splitting_ratio: float = 0.1, seed: int = None):
@@ -205,7 +205,7 @@ class CustomChannel:
 
 ```python
 class FiberWithTurbulence(RealisticFiberChannel):
-    """Extended fiber model with atmospheric effects for free-space link."""
+    """Example extension of a fiber model with an extra disturbance term."""
     
     def __init__(self, length_km, turbulence_strength='moderate'):
         super().__init__(length_km)

@@ -1,7 +1,7 @@
 # Poster and Presentation Guide
 
-This guide helps prepare materials for poster presentations and
-conference submissions based on this project.
+This guide is a practical reference for turning project results into a
+poster, talk, or short paper.
 
 ---
 
@@ -34,11 +34,11 @@ conference submissions based on this project.
 
 ### Title Suggestions
 
-For IEEE Quantum Computing and Engineering (QCE):
+For a technical conference:
 - "Comparative Analysis of QKD Protocol Security Under Realistic Noise Conditions"
 - "Attack Simulation Framework for Quantum Key Distribution Protocol Evaluation"
 
-For undergraduate symposium:
+For an undergraduate symposium:
 - "Understanding Quantum Cryptography Through Protocol Simulation"
 - "Exploring Quantum Key Distribution: From Theory to Implementation"
 
@@ -80,12 +80,12 @@ For undergraduate symposium:
 
 ### Target Venues
 
-**Top-tier (Graduate level)**:
+Possible technical venues:
 - IEEE QCE (Quantum Computing and Engineering)
 - ACM Q2B (Quantum to Business)
 - QIP (Quantum Information Processing)
 
-**Undergraduate-friendly**:
+Possible undergraduate venues:
 - IEEE ISCAS (Student Paper Contest)
 - Regional IEEE conferences
 - University research symposiums
@@ -103,12 +103,12 @@ novel attack simulation] for [protocol names].
 
 Our implementation includes [key features: noise models, attack 
 simulations, post-processing]. Through [X] experiments, we 
-analyze [key metrics] under [conditions].
+measure [key metrics] under [conditions].
 
 Key findings include: [1-3 main results with numbers].
 
-This work provides [educational value / practical insights / 
-framework for future research] for [target audience].
+This work provides [practical insight / a reusable codebase / 
+an experimental comparison] for [target audience].
 ```
 
 ### Paper Structure
@@ -172,10 +172,9 @@ A: "Classical encryption relies on computational difficulty,
 while QKD's security is based on the laws of physics—any 
 eavesdropping attempt is detectable."
 
-Q: "Can this run on a real quantum computer?"
-A: "This is simulation-based for educational purposes, but the 
-protocols are directly applicable to real QKD hardware like 
-those from ID Quantique or Toshiba."
+Q: "Can this run on real hardware?"
+A: "This repository is simulation-based, but the protocols are based on
+real QKD ideas used in practical systems."
 
 Q: "What about quantum computers breaking encryption?"
 A: "That's exactly why QKD is important—it's immune to 
@@ -225,4 +224,4 @@ for helpful discussions. This work was supported by
 
 ---
 
-*Poster and Presentation Guide - Quantum Cryptography Project*
+*Poster and Presentation Guide*
