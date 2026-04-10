@@ -349,3 +349,94 @@ Discussion Point: If the PNS attack creates 0% error, the next phase of research
 
 Image:
 results\figures\exp03_attack_analysis.png
+
+
+
+[2026-04-05] Experiment 04: Channel Characterization & Distance Analysis — Jerald D. Fisher
+
+Objective:
+    To quantify the impact of fiber-optic attenuation on signal integrity and determine the maximum secure transmission distance for the BB84 protocol.
+
+Method Parameters:
+    Fiber Model: Single-mode fiber with 0.2dB/km attenuation.
+
+Results:
+
+Metric	Measured Value @ 50km	Measured Value @ 150km	Measured Value @ 189km
+QBER (%)	2.14%	7.85%	11.02%
+SNR (dB)	24.2 dB	10.1 dB	0.2 dB
+Secret Key Yield	28.50%	4.20%	0.00%
+Status	SECURE	SECURE (LOW YIELD)	COMPROMISED
+
+Conclusions:
+
+The 11% Wall: Verified the Shor-Preskill security bound. Beyond 189.4 km, parity disclosure during error correction exceeds the available sifted bits.
+
+Dark Count Dominance: Beyond 160 km, QBER is driven by hardware "false clicks" as signal intensity fades into the noise floor.
+
+Practical Limit: While photons still arrive at 200 km, they are cryptographically useless.
+
+image:
+results\figures\exp04_noise_resilience.png
+
+
+[2026-04-07] Experiment 05: Post-Processing & "Performance Tax" — Jerald D. Fisher
+
+Objective: 
+    To measure the efficiency of the post-processing lifecycle (Sifting, CASCADE, and Privacy Amplification) across varying noise scenarios.
+
+Method Parameters: * Input Size: 2500 raw qubits.
+
+Algorithms: CASCADE (4-Pass), Toeplitz Hashing.
+
+Security Parameter: 1e-10.
+
+Results:
+
+Noise Level	Sifted Bits	EC Disclosure (Bits)	Final Secret Key	Efficiency (f)
+Ideal (0%)	1262	0	568	1
+Low (2%)	1258	142	412	1.16
+Medium (5%)	1265	398	186	1.22
+High (8%)	1244	612	32	1.28
+
+Conclusions:
+
+Efficiency Factor: Our CASCADE implementation achieved an average efficiency (f) of 1.18, disclosing 18% more parity than the theoretical Shannon limit.
+
+Performance Tax: Moving from 2% to 8% noise results in a 92% reduction in final key yield.
+
+Block-Size Sensitivity: Block sizes smaller than 1000 bits lead to unstable error estimation and key "over-shrinkage."
+
+
+image:
+results\figures\exp05_full_simulation.png
+
+
+[2026-04-09] Experiment 06: Decoy-State Optimization & Attack Detection — Jerald D. Fisher
+
+Objective: 
+    To validate the effectiveness of multi-intensity decoy states in identifying Intercept-Resend (IR) attacks and optimizing throughput.
+
+Method Parameters: Intensities: Signal (mu=0.6), Decoy (nu=0.1), Vacuum (0).
+
+Adversarial Model: Intercept-Resend Attack (30% probability).
+
+Optimization: Dynamic mu/nu ratio based on real-time QBER.
+
+Results:
+
+Scenario	Signal Yield (Y_mu)	Decoy Yield (Y_nu)	Yield Divergence	Detection Latency
+Normal Channel	0.045	0.042	0.003	N/A
+IR Attack (Active)	0.062	0.031	0.031	250 Pulses
+Optimized Channel	0.048	0.044	0.004	N/A
+
+Conclusions:
+
+The Yield Signature: An active attack creates a "Yield Divergence." Eve's measurements boost signal yield but suppress decoy yield relative to the noise floor.
+
+Optimization Gain: Dynamically adjusting intensities improved the secret key lower bound by 8.4%.
+
+Detection Speed: Successfully flagged the attack with 99.8% confidence within the first 12% of the transmission window.
+
+image:
+/results/figures/exp06_decoy_detection.png
