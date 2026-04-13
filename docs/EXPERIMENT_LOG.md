@@ -101,6 +101,141 @@ Follow-up experiments
     *Last Updated: [DATE]*
 
 ```
+Assignment 2:
+## [2026-04-07] Malcolm Wyatt Attack and Noise Analysis of QKD Protocols
+
+### Objective
+To analyze how quantum key distribution protocols (BB84, B92, E91, and SARG04) behave under ideal conditions, attack scenarios, and noisy environments, and to evaluate their efficiency, security, and robustness.
+
+### Method
+- Protocols used: BB84, B92, E91, SARG04  
+- Key length: 256 bits  
+- Trials: 1 per configuration  
+- Attack: Intercept-Resend, PNS, Trojan Horse  
+- Noise: Depolarizing, Amplitude Damping, Phase Damping, Fiber Channel  
+- Scripts used:
+  - exp02_protocol_comparison.py
+  - exp03_attack_analysis.py
+  - exp04_noise_resilience.py
+
+### Results
+
+#### Baseline (No Noise, No Attack)
+
+| Protocol | Raw | Sifted | Efficiency | QBER | Key Rate | Time | Secure |
+|----------|-----|--------|------------|------|----------|------|--------|
+| BB84     | 640 | 309    | 0.4828     | 0.00 | 0.4      | 0.082 | True |
+| B92      |1280 | 338    | 0.2641     | 0.00 | 0.2      | 0.151 | True |
+| E91      |1536 | 364    | 0.2370     | 0.25 | 0.0      | 0.270 | False |
+| SARG04   |1280 | 315    | 0.2461     | 0.00 | 0.2      | 0.161 | True |
+
+---
+
+#### Intercept-Resend Attack
+
+| Attack % | QBER | Key Rate | Eve Info | Secure |
+|----------|------|----------|----------|--------|
+| 0%       | 0.0000 | 1.0000 | 0.0   | True |
+| 20%      | 0.0333 | 0.3742 | 65.0  | True |
+| 40%      | 0.2000 | 0.0000 | 133.5 | True |
+| 60%      | 0.1667 | 0.0000 | 189.5 | False |
+| 80%      | 0.3000 | 0.0000 | 253.0 | False |
+| 100%     | 0.2667 | 0.0000 | 320.0 | False |
+
+---
+
+#### Photon Number Splitting (PNS) Attack
+
+| μ | Vulnerable % |
+|---|--------------|
+| 0.05 | 4.8% |
+| 0.10 | 9.4% |
+| 0.20 | 17.5% |
+| 0.30 | 24.6% |
+| 0.50 | 36.1% |
+
+---
+
+#### Detection Probability
+
+| Sample Size | Detection Probability |
+|-------------|----------------------|
+| 10 | 94.37% |
+| 50+ | ~100% |
+
+---
+
+#### Fiber Noise Results
+
+| Distance | QBER | Key Rate |
+|----------|------|----------|
+| 0 km     | 0.00% | 74,998,852 bps |
+| 42 km    | 0.07% | 10,619,387 bps |
+| 84 km    | 0.09% | 1,518,505 bps |
+| 126 km   | 0.12% | 217,101 bps |
+| 168 km   | 0.21% | 30,730 bps |
+
+---
+
+#### Noise Type Comparison
+
+| Noise Type | QBER | Key Rate |
+|------------|------|----------|
+| Depolarizing | 0.00% | 0.5667 |
+| Amplitude Damping | 13.33% | 0.1456 |
+| Phase Damping | 3.33% | 0.8013 |
+
+---
+
+### Conclusions
+BB84 demonstrated the highest efficiency and most stable performance under ideal conditions. B92 showed lower efficiency due to discarding inconclusive measurements but remained secure. E91 exhibited higher QBER and instability, highlighting its sensitivity to implementation.
+
+Under attack conditions, QBER increased sharply, particularly for intercept-resend attacks, reaching around 25% and causing the key rate to drop to zero. This confirmed that eavesdropping introduces detectable disturbances. PNS attacks were more subtle, allowing information gain without increasing QBER.
+
+Under noisy conditions, QBER increased gradually while key rate decreased, especially under amplitude damping and long-distance fiber transmission. This shows that noise degrades system performance over time rather than causing immediate failure.
+
+### Next Steps
+- Improve E91 implementation to reduce QBER  
+- Compare protocol performance under combined noise and attack  
+- Investigate mitigation strategies such as decoy states  
+- Extend testing to include additional protocols  
+
+---
+
+## Notes and Observations
+
+- BB84 provides the clearest and most reliable security signal  
+- B92 trades efficiency for security  
+- E91 is highly sensitive and complex  
+- Attacks cause sudden changes, while noise causes gradual degradation  
+- PNS attacks are difficult to detect due to low QBER impact  
+
+---
+
+## Key Findings Summary
+
+- BB84 is the most efficient and easiest to interpret  
+- B92 is less efficient but still secure  
+- E91 offers strong theoretical security but is difficult to implement  
+- QBER is the main indicator of security  
+- Noise and attacks both degrade performance, but in different ways  
+
+---
+
+## Questions for Discussion
+
+1. Why does E91 show high QBER even under ideal conditions?  
+2. How can quantum protocols defend against stealth attacks like PNS?  
+3. What trade-offs exist between efficiency, simplicity, and security in QKD protocols?  
+
+---
+
+*Experiment Log - Quantum Cryptography Project*  
+*Started: 2026-04-07*  
+*Last Updated: 2026-04-07*
+
+
+
 Assignment 1:
 ## [2026-04-07] Malcolm Wyatt QKD Protocol Implementation and Analysis
 
