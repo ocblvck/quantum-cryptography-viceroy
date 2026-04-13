@@ -101,6 +101,120 @@ Follow-up experiments
     *Last Updated: [DATE]*
 
 ```
+## [2026-04-12] Malcolm Wyatt SARG04 Protocol Analysis and PNS Resistance
+
+### Objective
+To understand how the SARG04 protocol differs from BB84, evaluate its efficiency compared to BB84 and B92, and analyze why it provides improved resistance to photon number splitting (PNS) attacks.
+
+### Method
+- Protocols used: BB84, SARG04, B92  
+- Key length: 256 bits  
+- Trials: 1 per protocol  
+- No noise or attack (baseline comparison)  
+- Additional comparison: BB84 vs SARG04 sifting efficiency  
+
+### Results
+- BB84 sifting efficiency ≈ 48%  
+- SARG04 sifting efficiency ≈ 24–25%  
+- B92 sifting efficiency ≈ 26–27%  
+
+- BB84 produced the highest efficiency  
+- SARG04 produced lower efficiency due to more discarded bits  
+- SARG04 efficiency was slightly lower than B92 in some runs  
+
+### Conclusions
+SARG04 uses the same four quantum states as BB84 (|0⟩, |1⟩, |+⟩, |−⟩), but differs in how classical information is announced. In BB84, Alice reveals the measurement basis, while in SARG04 she announces a pair of possible states. This change makes it harder for an eavesdropper to determine the transmitted bit.
+
+This difference is especially important for photon number splitting (PNS) attacks. In BB84, an eavesdropper can store extra photons and wait for the basis announcement to measure them correctly. In SARG04, because only a pair of possible states is revealed instead of the exact basis, Eve cannot reliably determine the bit, reducing her advantage.
+
+However, this improvement comes at the cost of efficiency. SARG04 discards more bits during the sifting process because many measurement outcomes are inconclusive. As a result, fewer bits are kept, lowering the overall efficiency compared to BB84.
+
+### Next Steps
+- Analyze SARG04 performance under noise conditions  
+- Compare SARG04 behavior under attack scenarios  
+- Investigate optimization methods for improving efficiency  
+
+---
+
+## Notes and Observations
+
+- SARG04 uses the same quantum states as BB84 but changes the classical communication step  
+- The announcement of state pairs instead of bases is the key difference  
+- This modification reduces Eve’s ability to exploit multi-photon pulses  
+- SARG04 consistently produces lower efficiency due to increased discarded measurements  
+- Compared to B92, SARG04 maintains moderate efficiency while improving security  
+
+---
+
+## Key Findings Summary
+
+- SARG04 differs from BB84 primarily in its announcement strategy  
+- BB84 is more efficient but more vulnerable to PNS attacks  
+- SARG04 is less efficient but provides better resistance to certain attacks  
+- B92 is the least efficient overall due to many inconclusive measurements  
+- The main trade-off in SARG04 is efficiency vs security  
+
+---
+
+## Questions for Discussion
+
+1. How does SARG04 differ from BB84?  
+SARG04 uses the same quantum states as BB84 but differs in the classical announcement step. Instead of revealing the measurement basis, Alice announces a pair of possible states, making it harder for an eavesdropper to determine the transmitted bit.
+
+2. Why is SARG04 considered more resistant to PNS attacks?  
+SARG04 is more resistant because its announcement strategy prevents an eavesdropper from using stored photons to determine the correct measurement basis. This reduces Eve’s ability to gain information without introducing detectable errors.
+
+3. What did your experiments show about its efficiency?  
+The experiments showed that SARG04 has lower sifting efficiency (~24–25%) compared to BB84 (~48%) and is similar to or slightly lower than B92. This confirms that SARG04 sacrifices efficiency for improved security.
+
+---
+
+## Extended Conceptual Answers
+
+### How does SARG04 use the same four signal states as BB84?
+SARG04 uses the same four quantum states (|0⟩, |1⟩, |+⟩, |−⟩) as BB84 for encoding information, but differs in how the classical information is shared after transmission.
+
+### What does Alice announce in SARG04, and how is that different from BB84?
+In BB84, Alice announces the basis used for each bit. In SARG04, she announces a pair of possible states that includes the correct one, rather than revealing the exact basis.
+
+### Why does changing the announcement rule matter for PNS resistance?
+This change prevents an eavesdropper from knowing the correct basis after the fact, making it much harder to extract information from intercepted photons.
+
+### Why is SARG04 less efficient than BB84 during sifting?
+Because many measurement outcomes do not match the announced pair, leading to more discarded bits and lower efficiency.
+
+---
+
+### How does SARG04 compare to BB84 in efficiency?
+SARG04 is significantly less efficient than BB84 because it discards more bits during the sifting process.
+
+### How does SARG04 compare to B92 in sifting efficiency?
+SARG04 has comparable or slightly lower efficiency than B92, but generally provides stronger security guarantees.
+
+### What trade-off does SARG04 make in exchange for improved PNS resistance?
+SARG04 sacrifices efficiency to gain improved security against PNS attacks.
+
+---
+
+### What is a photon number splitting attack in practical QKD systems?
+A PNS attack occurs when an eavesdropper exploits multi-photon pulses by splitting off one photon and storing it, allowing them to measure it later without introducing errors.
+
+### Why is BB84 more vulnerable in weak coherent pulse implementations?
+Because multi-photon pulses allow Eve to keep a copy and measure it after the basis is revealed, gaining information without increasing QBER.
+
+### Why does SARG04's announcement strategy reduce Eve's advantage?
+Because the announcement does not reveal enough information for Eve to determine the correct measurement basis, even if she stores photons.
+
+### Why does this improvement come with an efficiency cost?
+Because the stricter sifting conditions result in more discarded measurements, reducing the number of usable bits.
+
+---
+
+*Experiment Log - Quantum Cryptography Project*  
+*Started: 2026-04-12*  
+*Last Updated: 2026-04-12*
+
+
 Assignment 2:
 ## [2026-04-07] Malcolm Wyatt Attack and Noise Analysis of QKD Protocols
 
