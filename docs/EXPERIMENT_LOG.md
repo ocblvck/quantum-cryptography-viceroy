@@ -324,6 +324,49 @@ Testing confirmed that the protocols function correctly after fixing incorrect t
 
 ---
 
+## Attack Analysis
+
+1. Which protocol shows the clearest measurable effect under attack?
+The protocol that shows the clearest measurable effect under attack is BB84, as it exhibits a noticeable increase in QBER when an eavesdropper is present.
+
+2. How does the attack change the final usable key length?
+The attack decreases the final usable key length because the additional errors introduced lead to more bits being discarded during the sifting and error-checking process.
+
+3. In E91, what happens to the Bell-test-related information when the channel is disturbed?
+In the E91 protocol, when the channel is disturbed, the Bell-test-related correlations break down, indicating a loss of entanglement and causing the protocol to become insecure.
+
+---
+
+## Comparative Interpretation
+
+Which protocol is most efficient in clean conditions?
+BB84 is the most efficient protocol in clean conditions. From the baseline results, BB84 achieved the highest sifting efficiency (around 48%) and maintained a QBER of 0, meaning almost half of the transmitted bits were usable and error-free. In comparison, B92 had a lower efficiency (~27%) due to discarding inconclusive measurements, and E91 had the lowest efficiency (~24%) along with higher error rates. This shows that BB84 provides the best balance of efficiency and reliability when no disturbances are present.
+
+Which protocol appears most sensitive to noise?
+B92 appears to be the most sensitive to noise. Because it relies on distinguishing between non-orthogonal states and already discards a large portion of measurements, any additional noise further reduces the number of usable bits and increases errors. In contrast, BB84 is more robust due to its symmetric basis structure, and E91’s performance is heavily influenced by entanglement quality, but B92’s already low efficiency makes it degrade more quickly under noise.
+
+Which protocol gives the clearest security signal under disturbance?
+BB84 provides the clearest security signal under disturbance. In the attack analysis, QBER increased significantly (approaching ~25%) under intercept-resend attacks, making the presence of an eavesdropper easy to detect. This direct relationship between disturbance and error rate makes BB84 straightforward to interpret. While E91 also provides a strong theoretical security signal through Bell inequality violations, it is more complex to interpret in practice compared to the clear QBER changes seen in BB84.
+
+How do implementation complexity and security interpretation trade off against each other?
+There is a clear trade-off between implementation complexity and ease of security interpretation. BB84 is relatively simple to implement and provides a clear, direct security signal through QBER, making it easy to analyze. B92 is also simple but sacrifices efficiency and is more sensitive to noise, which can complicate interpretation. E91 is the most complex protocol due to its reliance on entanglement and Bell inequality testing, but it offers stronger theoretical security guarantees. However, this added complexity makes it harder to interpret results and more sensitive to implementation issues. Overall, simpler protocols like BB84 are easier to use and interpret, while more complex protocols like E91 provide deeper security insights but require more careful implementation and analysis.
+
+---
+
+What changed most under attack?
+The most significant change under attack was the sharp increase in QBER and the rapid drop in the secret key rate. As the intercept-resend attack probability increased, QBER rose to around 25% at full attack, which is consistent with theoretical expectations. At the same time, the key rate quickly dropped to zero, meaning no secure key could be generated. This shows that eavesdropping introduces clear and detectable disturbances in the communication channel.
+
+What changed most under noise?
+Under noise, the most noticeable change was the gradual increase in QBER and the steady decrease in key rate. Unlike attacks, which caused sudden spikes in error, noise caused a more continuous degradation of performance. In particular, amplitude damping (photon loss) significantly reduced the key rate, while phase damping caused smaller increases in QBER. Overall, noise made the system less reliable over time rather than immediately insecure.
+
+Which protocol was easiest to interpret from the results?
+BB84 was the easiest protocol to interpret. Its behavior is directly reflected in the QBER, making it clear when the system is secure or under attack. When disturbances were introduced, the increase in QBER clearly indicated a problem. This straightforward relationship between errors and security made BB84 much easier to analyze compared to B92 and especially E91.
+
+Which result surprised you most?
+The most surprising result was the behavior of the photon number splitting (PNS) attack. Unlike intercept-resend, the PNS attack allowed significant information gain without increasing QBER, making it difficult to detect. This highlights that not all attacks produce obvious error signals and shows the importance of additional techniques, such as decoy states, in practical quantum key distribution systems.
+
+---
+
 ## Key Findings Summary
 
 - BB84 is the most efficient and stable protocol  
