@@ -101,6 +101,7 @@ Follow-up experiments
     *Last Updated: [DATE]*
 
 ```
+Assignment 3:
 ## [2026-04-12] Malcolm Wyatt SARG04 Protocol Analysis and PNS Resistance
 
 ### Objective
