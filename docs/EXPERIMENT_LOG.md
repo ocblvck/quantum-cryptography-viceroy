@@ -101,6 +101,146 @@ Follow-up experiments
     *Last Updated: [DATE]*
 
 ```
+Malcolm Wyatt - Project
+## [2026-04-16] Comparative Study of QKD Protocol Performance Under Noise
+
+### Objective
+For this project, I will be comparing the Quantum Key Distribution Protocol performance under noise. I will compare the differences between the protocols and explain why I received those results.
+
+### Method
+- Protocols: BB84, B92, E91, SARG04
+- Key length: 256 bits
+- Trials: 10 per protocol
+- Noise: 0% to 20%; incrementing by 2%
+
+### Results
+2. Protocol Noise Analysis
+--------------------------------------------------
+
+--- BB84 ---
+Results:
+   Noise     QBER   Key Rate   Secure
+----------------------------------------
+   0.00%   0.0000     1.0000        1
+   2.00%   0.0000     0.8576        1
+   4.00%   0.0667     0.6537        1
+   6.00%   0.0667     0.4860        1
+   8.00%   0.1000     0.3048        1
+  10.00%   0.0333     0.1456        1
+  12.00%   0.0000     0.2071        1
+  14.00%   0.0667     0.0868        1
+  16.00%   0.0333     0.0000        1
+  18.00%   0.0333     0.0000        1
+  20.00%   0.0667     0.0000        0
+Average Secret Key Rate: 0.3402
+
+
+
+--- B92 ---
+Results:
+   Noise     QBER   Key Rate   Secure
+----------------------------------------
+   0.00%   0.0000     1.0000        1
+   2.00%   0.0286     0.6537        1
+   4.00%   0.0000     0.6537        1
+   6.00%   0.0571     0.4476        1
+   8.00%   0.0556     0.1456        1
+  10.00%   0.0833     0.1456        1
+  12.00%   0.0833     0.0305        1
+  14.00%   0.0606     0.0584        1
+  16.00%   0.1622     0.0031        1
+  18.00%   0.0256     0.0000        0
+  20.00%   0.0769     0.0000        0
+Average Secret Key Rate: 0.2853
+
+--- E91 ---
+Results:
+   Noise     QBER   Key Rate   Secure
+----------------------------------------
+   0.00%   0.3889     0.0000        0
+   2.00%   0.3611     0.0000        0
+   4.00%   0.3611     0.0000        0
+   6.00%   0.4167     0.0000        0
+   8.00%   0.3056     0.0000        0
+  10.00%   0.4167     0.0000        0
+  12.00%   0.5000     0.0000        0
+  14.00%   0.2500     0.0000        0
+  16.00%   0.4167     0.0000        0
+  18.00%   0.2778     0.0000        0
+  20.00%   0.3056     0.0000        0
+Average Secret Key Rate: 0.0000
+
+--- SARG04 ---
+Results:
+   Noise     QBER   Key Rate   Secure
+----------------------------------------
+   0.00%   0.0000     1.0000        1
+   2.00%   0.0000     1.0000        1
+   4.00%   0.0000     1.0000        1
+   6.00%   0.0000     1.0000        1
+   8.00%   0.0000     1.0000        1
+  10.00%   0.0000     1.0000        1
+  12.00%   0.0000     1.0000        1
+  14.00%   0.0000     1.0000        1
+  16.00%   0.0000     1.0000        1
+  18.00%   0.0000     1.0000        1
+  20.00%   0.0000     1.0000        1
+Average Secret Key Rate: 1.0000
+
+### Conclusions
+The results show that BB84 maintains stable performance under low noise conditions, with gradually increasing QBER and decreasing key rate as noise increases. It remains secure up to moderate noise levels before becoming insecure at higher levels, demonstrating solid robustness.
+
+B92 shows greater sensitivity to noise, with its key rate decreasing more quickly and QBER increasing more noticeably. This is due to its reliance on conclusive measurements, which are further reduced in noisy environments.
+
+E91 performs poorly under noise, exhibiting consistently high QBER and producing no usable key across all noise levels. This indicates that the protocol is highly sensitive to noise and more difficult to implement reliably compared to prepare-and-measure protocols.
+
+SARG04 appears unaffected by noise in this implementation, maintaining zero QBER and a constant key rate. However, this behavior is likely due to limitations in the noise model or implementation rather than true protocol performance, and should be interpreted cautiously.
+
+Overall, the experiment demonstrates that noise degrades protocol performance primarily by increasing QBER and reducing key rate, with different protocols showing varying levels of sensitivity.
+
+### Next Steps
+Investigate why SARG04 is not affected by noise in this implementation
+Improve or verify the E91 implementation to better reflect expected behavior
+Compare protocol performance under combined noise and attack conditions
+Extend analysis to include additional noise models for more realistic scenarios
+
+---
+
+
+## Notes and Observations
+BB84 provides consistent and predictable behavior under noise
+B92 is more sensitive due to already reduced usable key bits
+E91 is highly unstable and sensitive to both noise and implementation details
+SARG04’s lack of response to noise suggests a modeling or implementation limitation
+Noise causes gradual degradation, unlike attacks, which cause sharp disruptions
+
+
+---
+
+## Key Findings Summary
+BB84 is the most robust and reliable protocol under noise
+B92 is more sensitive and degrades faster
+E91 is the least stable and fails to produce a usable key
+SARG04 shows unrealistic stability in this implementation
+Increasing noise leads to higher QBER and lower key rates across protocols
+
+
+---
+
+## Questions for Discussion
+
+Why does the SARG04 protocol appear unaffected by noise in this implementation, and how can the model be improved to better reflect realistic behavior?
+What factors contribute to the high QBER observed in the E91 protocol, even at low noise levels?
+How do different noise models (e.g., depolarizing vs. amplitude damping) affect protocol performance differently?
+
+---
+
+*Experiment Log - Quantum Cryptography Project*
+*Started: [4/13/2026]*
+*Last Updated: [4/16/2026]*
+
+
+
 Assignment 3:
 ## [2026-04-12] Malcolm Wyatt SARG04 Protocol Analysis and PNS Resistance
 
