@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite this repository and credit the CREO VICEROY undergraduate research program at North Carolina A&T State University."
+title: "Quantum Key Distribution Protocol Suite: Implementation, Attack Simulation, and Security Analysis"
+type: software
+authors:
+  - family-names: Okekeogbu
+    given-names: Chibuike C.
+    affiliation: "North Carolina Agricultural and Technical State University"
+  - family-names: Wyatt
+    given-names: Malcolm
+    affiliation: "North Carolina Agricultural and Technical State University"
+  - family-names: Fisher
+    given-names: Jerald
+    affiliation: "North Carolina Agricultural and Technical State University"
+  - family-names: Sorour
+    given-names: Habiba
+    affiliation: "North Carolina Agricultural and Technical State University"
+repository-code: "https://github.com/ocblvck/quantum-cryptography-viceroy"
+license: MIT
+date-released: "2026-01-04"
+abstract: "Implementations of quantum key distribution protocols with attack simulation and security analysis under noise, developed as a CREO VICEROY undergraduate research project (Spring 2026) at North Carolina A&T State University. Graduate mentor Chibuike C. Okekeogbu; faculty PI Ahmad Patooghy."

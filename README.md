@@ -207,6 +207,13 @@ QKD leverages the fundamental principles of quantum mechanics to establish secur
 4. Scarani, V., et al. (2004). Quantum cryptography protocols robust against photon number splitting attacks.
 5. Pirandola, S., et al. (2020). Advances in quantum cryptography. Advances in Optics and Photonics.
 
+## Citation
+
+If you use this code, cite this repository and credit the CREO VICEROY undergraduate
+research program at North Carolina A&T State University (graduate mentor Chibuike C.
+Okekeogbu, faculty PI Ahmad Patooghy). A machine-readable citation is in `CITATION.cff`.
+If a paper from this project is published, it will be added there.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
